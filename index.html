@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRUNEX WEB — Sites Profissionais em Angola</title>
+<meta name="description" content="BRUNEX WEB cria sites profissionais para empresas, lojas, restaurantes, barbearias, salões, hotéis e empreendedores em Angola.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050505;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+:root{
+    --pink:#ff9fcf;
+    --pink-light:#ffc4e2;
+    --pink-dark:#ff6fb5;
+    --black:#050505;
+    --dark:#0c0c0c;
+    --card:#111;
+    --white:#fff;
+    --gray:#aaa;
+}
+
+/* FUNDO */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:rgba(255,159,207,.10);
+    filter:blur(120px);
+    border-radius:50%;
+    top:-200px;
+    left:-200px;
+    z-index:-2;
+    animation:glow 8s ease-in-out infinite alternate;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:rgba(255,111,181,.08);
+    filter:blur(120px);
+    border-radius:50%;
+    bottom:-200px;
+    right:-200px;
+    z-index:-2;
+    animation:glow2 10s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+    from{transform:translate(0,0)}
+    to{transform:translate(150px,100px)}
+}
+
+@keyframes glow2{
+    from{transform:translate(0,0)}
+    to{transform:translate(-120px,-80px)}
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:18px 7%;
+    transition:.4s;
+}
+
+header.scrolled{
+    background:rgba(5,5,5,.88);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,159,207,.12);
+}
+
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+/* LOGO */
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:bold;
+}
+
+.logo-symbol{
+    width:43px;
+    height:43px;
+    border-radius:12px;
+    border:1px solid rgba(255,159,207,.8);
+    background:linear-gradient(145deg,#1c1c1c,#080808);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    box-shadow:
+        0 0 20px rgba(255,159,207,.12),
+        inset 0 0 15px rgba(255,159,207,.05);
+}
+
+.logo-symbol::before{
+    content:"B";
+    font-size:27px;
+    font-weight:900;
+    font-style:italic;
+}
+
+.logo-symbol::after{
+    content:"";
+    position:absolute;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--pink);
+    right:7px;
+    top:7px;
+    box-shadow:0 0 12px var(--pink);
+}
+
+.brand-name{
+    font-size:20px;
+    letter-spacing:1px;
+}
+
+.web{
+    color:var(--pink);
+}
+
+/* MENU */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#ddd;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--pink);
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    color:var(--pink);
+    background:none;
+    border:none;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    padding:150px 7% 80px;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:50px;
+}
+
+.hero-content{
+    animation:heroIn 1s ease forwards;
+}
+
+@keyframes heroIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 15px;
+    border:1px solid rgba(255,159,207,.3);
+    background:rgba(255,159,207,.06);
+    border-radius:30px;
+    color:var(--pink);
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+.badge span{
+    width:7px;
+    height:7px;
+    background:var(--pink);
+    border-radius:50%;
+    box-shadow:0 0 10px var(--pink);
+}
+
+.hero h1{
+    font-size:clamp(42px,6vw,76px);
+    line-height:1.02;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:var(--pink);
+}
+
+.hero p{
+    color:#bdbdbd;
+    font-size:18px;
+    line-height:1.7;
+    max-width:650px;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:15px 24px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.15);
+    font-weight:bold;
+    font-size:14px;
+    transition:.35s;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+.btn-primary{
+    background:var(--pink);
+    color:#080808;
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 40px rgba(255,159,207,.3);
+}
+
+.btn-outline{
+    background:#101010;
+    color:#fff;
+}
+
+.btn-outline:hover{
+    border-color:var(--pink);
+    color:var(--pink);
+    transform:translateY(-4px);
+}
+
+/* LAPTOP */
+
+.hero-visual{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.laptop{
+    width:min(520px,100%);
+    background:#111;
+    border:1px solid rgba(255,159,207,.2);
+    border-radius:18px;
+    padding:12px;
+    transform:perspective(1000px) rotateY(-8deg) rotateX(3deg);
+    box-shadow:0 40px 80px rgba(0,0,0,.6);
+    animation:laptopFloat 5s ease-in-out infinite;
+}
+
+@keyframes laptopFloat{
+    0%,100%{
+        transform:perspective(1000px) rotateY(-8deg) rotateX(3deg) translateY(0);
+    }
+    50%{
+        transform:perspective(1000px) rotateY(-8deg) rotateX(3deg) translateY(-12px);
+    }
+}
+
+.screen{
+    aspect-ratio:16/10;
+    border-radius:10px;
+    background:linear-gradient(135deg,#171717,#050505);
+    padding:25px;
+}
+
+.fake-nav{
+    height:20px;
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:35px;
+}
+
+.fake-logo{
+    width:70px;
+    height:10px;
+    background:var(--pink);
+    border-radius:20px;
+}
+
+.fake-links{
+    display:flex;
+    gap:8px;
+}
+
+.fake-links span{
+    width:30px;
+    height:5px;
+    background:#555;
+    border-radius:10px;
+}
+
+.fake-title{
+    width:75%;
+    height:30px;
+    background:#eee;
+    border-radius:5px;
+    margin-bottom:12px;
+}
+
+.fake-title.small{
+    width:50%;
+    height:15px;
+    background:#555;
+}
+
+.fake-button{
+    width:100px;
+    height:25px;
+    border-radius:7px;
+    background:var(--pink);
+    margin-top:20px;
+}
+
+.floating-card{
+    position:absolute;
+    right:-10px;
+    bottom:20px;
+    padding:18px;
+    border-radius:15px;
+    background:rgba(15,15,15,.9);
+    border:1px solid rgba(255,159,207,.25);
+    backdrop-filter:blur(15px);
+    animation:cardFloat 4s ease-in-out infinite;
+}
+
+@keyframes cardFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+
+.floating-card strong{
+    display:block;
+    font-size:22px;
+    color:var(--pink);
+}
+
+.floating-card small{
+    color:#aaa;
+}
+
+/* SEÇÕES */
+
+section{
+    padding:100px 7%;
+}
+
+.section-header{
+    max-width:700px;
+    margin-bottom:50px;
+}
+
+.section-label{
+    color:var(--pink);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+.section-title{
+    font-size:clamp(32px,5vw,52px);
+    margin-bottom:15px;
+}
+
+.section-description{
+    color:#999;
+    line-height:1.7;
+}
+
+/* CARDS */
+
+.problem{
+    background:#090909;
+}
+
+.problem-grid,
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.problem-card,
+.service-card{
+    padding:30px;
+    border:1px solid #1d1d1d;
+    background:#0e0e0e;
+    border-radius:18px;
+    transition:.4s;
+}
+
+.problem-card:hover,
+.service-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(255,159,207,.3);
+}
+
+.problem-icon,
+.service-icon{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.problem-card h3,
+.service-card h3{
+    margin-bottom:10px;
+}
+
+.problem-card p,
+.service-card p{
+    color:#999;
+    line-height:1.6;
+}
+
+/* PORTFÓLIO */
+
+.portfolio{
+    background:#080808;
+}
+
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.project-card{
+    min-height:280px;
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid #202020;
+    position:relative;
+    cursor:pointer;
+    background:#111;
+    transition:.45s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px) scale(1.015);
+    border-color:rgba(255,159,207,.45);
+}
+
+.project-bg{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    transition:.6s;
+    opacity:.65;
+}
+
+.project-card:hover .project-bg{
+    transform:scale(1.08);
+}
+
+.project-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,.95),rgba(0,0,0,.2));
+}
+
+.project-info{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:25px;
+    z-index:2;
+}
+
+.project-info small{
+    color:var(--pink);
+    font-weight:bold;
+}
+
+.project-info h3{
+    margin:7px 0;
+    font-size:24px;
+}
+
+.project-info p{
+    color:#bbb;
+    font-size:13px;
+}
+
+.project-click{
+    display:inline-block;
+    margin-top:14px;
+    color:var(--pink);
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* PROCESSO */
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.process-card{
+    padding:30px;
+    background:#0e0e0e;
+    border:1px solid #1c1c1c;
+    border-radius:18px;
+}
+
+.process-number{
+    font-size:40px;
+    font-weight:900;
+    color:rgba(255,159,207,.25);
+    margin-bottom:20px;
+}
+
+.process-card h3{
+    margin-bottom:10px;
+}
+
+.process-card p{
+    color:#999;
+    line-height:1.6;
+}
+
+/* PREÇOS */
+
+.pricing{
+    background:#090909;
+}
+
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.price-card{
+    padding:35px;
+    background:#101010;
+    border:1px solid #222;
+    border-radius:20px;
+    position:relative;
+    transition:.4s;
+}
+
+.price-card:hover{
+    border-color:rgba(255,159,207,.3);
+    transform:translateY(-5px);
+}
+
+.price-card.featured{
+    border-color:var(--pink);
+    transform:translateY(-8px);
+}
+
+.price-card.featured:hover{
+    transform:translateY(-12px);
+}
+
+.popular{
+    position:absolute;
+    top:15px;
+    right:15px;
+    padding:6px 10px;
+    border-radius:20px;
+    background:var(--pink);
+    color:#111;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.price{
+    font-size:35px;
+    font-weight:900;
+    margin:20px 0;
+}
+
+.price span{
+    font-size:13px;
+    color:#888;
+}
+
+.price-list{
+    list-style:none;
+    margin-bottom:25px;
+}
+
+.price-list li{
+    padding:8px 0;
+    color:#aaa;
+    font-size:14px;
+}
+
+.price-list li::before{
+    content:"✓";
+    color:var(--pink);
+    margin-right:8px;
+}
+
+/* CTA */
+
+.cta{
+    text-align:center;
+    padding:120px 7%;
+}
+
+.cta-box{
+    max-width:900px;
+    margin:auto;
+    padding:70px 30px;
+    border-radius:30px;
+    border:1px solid rgba(255,159,207,.2);
+    background:radial-gradient(circle at center,rgba(255,159,207,.08),transparent 55%),#0d0d0d;
+}
+
+.cta h2{
+    font-size:clamp(35px,5vw,60px);
+    margin-bottom:20px;
+}
+
+.cta p{
+    color:#999;
+    max-width:600px;
+    margin:0 auto 30px;
+    line-height:1.7;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid #181818;
+    padding:35px 7%;
+}
+
+.footer-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.footer-copy{
+    color:#777;
+    font-size:13px;
+}
+
+.footer-links{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
+
+.footer-links a{
+    color:#888;
+    font-size:13px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:var(--pink);
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.78);
+    backdrop-filter:blur(12px);
+    z-index:3000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    opacity:0;
+    visibility:hidden;
+    transition:.35s;
+}
+
+.modal.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.modal-content{
+    width:min(650px,100%);
+    max-height:90vh;
+    overflow-y:auto;
+    background:#0e0e0e;
+    border:1px solid rgba(255,159,207,.25);
+    border-radius:25px;
+    padding:35px;
+    position:relative;
+    transform:translateY(30px) scale(.96);
+    transition:.4s;
+    box-shadow:0 30px 100px rgba(0,0,0,.7);
+}
+
+.modal.active .modal-content{
+    transform:translateY(0) scale(1);
+}
+
+.modal-close{
+    position:absolute;
+    right:18px;
+    top:18px;
+    width:38px;
+    height:38px;
+    border:none;
+    border-radius:50%;
+    background:#191919;
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.modal-close:hover{
+    background:var(--pink);
+    color:#111;
+}
+
+.modal-icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.modal-category{
+    color:var(--pink);
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.modal-title{
+    font-size:34px;
+    margin:8px 0;
+}
+
+.modal-headline{
+    font-size:18px;
+    color:#ddd;
+    line-height:1.5;
+    margin-bottom:15px;
+}
+
+.modal-description{
+    color:#999;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.modal-features{
+    list-style:none;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin:20px 0;
+}
+
+.modal-features li{
+    padding:12px;
+    background:#151515;
+    border:1px solid #202020;
+    border-radius:10px;
+    color:#ccc;
+    font-size:13px;
+}
+
+.modal-features li::before{
+    content:"✓";
+    color:var(--pink);
+    margin-right:8px;
+}
+
+.modal-price-box{
+    padding:20px;
+    border-radius:15px;
+    background:rgba(255,159,207,.06);
+    border:1px solid rgba(255,159,207,.15);
+    margin:25px 0;
+}
+
+.modal-price-label{
+    color:#888;
+    font-size:12px;
+}
+
+.modal-price{
+    color:var(--pink);
+    font-size:32px;
+    font-weight:900;
+    margin-top:5px;
+}
+
+.modal-price small{
+    color:#888;
+    font-size:12px;
+    font-weight:normal;
+}
+
+.modal-actions{
+    display:flex;
+    gap:12px;
+    margin-top:25px;
+}
+
+.modal-actions .btn{
+    flex:1;
+}
+
+.modal-actions .btn-primary{
+    background:var(--pink);
+    color:#080808;
+    border:none;
+}
+
+.modal-actions .btn-outline{
+    background:transparent;
+    border:1px solid rgba(255,159,207,.3);
+}
+
+/* ANIMAÇÃO */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:.8s;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+    .hero{
+        grid-template-columns:1fr;
+        padding-top:130px;
+    }
+
+    .hero-visual{
+        order:-1;
+    }
+
+    .problem-grid,
+    .services-grid,
+    .portfolio-grid,
+    .pricing-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .process-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .nav-links{
+        position:absolute;
+        top:75px;
+        left:5%;
+        width:90%;
+        padding:25px;
+        flex-direction:column;
+        background:#0d0d0d;
+        border:1px solid #222;
+        border-radius:15px;
+        opacity:0;
+        visibility:hidden;
+        transform:translateY(-10px);
+        transition:.3s;
+        z-index:999;
+    }
+
+    .nav-links.active{
+        opacity:1;
+        visibility:visible;
+        transform:translateY(0);
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .floating-card{
+        right:0;
+        bottom:10px;
+        padding:12px 15px;
+        font-size:14px;
+    }
+
+    .floating-card strong{
+        font-size:16px;
+    }
+
+    .floating-card small{
+        font-size:11px;
+    }
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:75px 5%;
+    }
+
+    header{
+        padding:15px 5%;
+    }
+
+    .hero{
+        padding-left:5%;
+        padding-right:5%;
+        padding-top:100px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .problem-grid,
+    .services-grid,
+    .portfolio-grid,
+    .pricing-grid,
+    .process-grid{
+        grid-template-columns:1fr;
+    }
+
+    .price-card.featured{
+        transform:none;
+    }
+
+    .modal-content{
+        padding:25px 20px;
+    }
+
+    .modal-title{
+        font-size:28px;
+    }
+
+    .modal-features{
+        grid-template-columns:1fr;
+    }
+
+    .modal-actions{
+        flex-direction:column;
+    }
+
+    .footer-content{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .laptop{
+        width:min(380px,100%);
+    }
+
+    .brand-name{
+        font-size:16px;
+    }
+
+    .nav-links{
+        gap:15px;
+    }
+
+    .nav-links a{
+        font-size:13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header id="header">
+<nav class="navbar">
+<a href="#inicio" class="brand">
+<div class="logo-symbol"></div>
+<div class="brand-name">BRUNEX <span class="web">WEB</span></div>
+</a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#inicio">Início</a></li>
+<li><a href="#problema">Porquê</a></li>
+<li><a href="#servicos">Serviços</a></li>
+<li><a href="#projetos">Projetos</a></li>
+<li><a href="#processo">Processo</a></li>
+<li><a href="#precos">Preços</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+
+<button class="menu-btn" id="menuBtn">☰</button>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+<div class="hero-content">
+<div class="badge">
+<span></span>
+SITES PROFISSIONAIS PARA NEGÓCIOS
+</div>
+
+<h1>O teu negócio merece <span>ser encontrado.</span></h1>
+
+<p>Criamos sites modernos, rápidos e profissionais para empresas, lojas, restaurantes, barbearias, salões, hotéis e empreendedores.</p>
+
+<div class="hero-buttons">
+<a href="#projetos" class="btn btn-primary">Ver nossos projetos →</a>
+<a href="#contacto" class="btn btn-outline">Pedir orçamento</a>
+</div>
+</div>
+
+<div class="hero-visual">
+<div class="laptop">
+<div class="screen">
+<div class="fake-nav">
+<div class="fake-logo"></div>
+<div class="fake-links">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+<div class="fake-title"></div>
+<div class="fake-title small"></div>
+<div class="fake-button"></div>
+</div>
+</div>
+
+<div class="floating-card">
+<strong>+ Online</strong>
+<small>O teu negócio na internet</small>
+</div>
+</div>
+</section>
+
+<!-- PROBLEMA -->
+<section class="problem" id="problema">
+<div class="section-header reveal">
+<div class="section-label">PORQUÊ TER UM SITE?</div>
+<h2 class="section-title">O teu cliente está à procura.</h2>
+<p class="section-description">Hoje, estar apenas no WhatsApp ou nas redes sociais pode não ser suficiente. Um site profissional ajuda a apresentar melhor o teu negócio.</p>
+</div>
+
+<div class="problem-grid">
+<div class="problem-card reveal">
+<div class="problem-icon">🔎</div>
+<h3>Ser encontrado</h3>
+<p>Mostra o teu negócio na internet e facilita para novos clientes encontrarem-te.</p>
+</div>
+
+<div class="problem-card reveal">
+<div class="problem-icon">🤝</div>
+<h3>Transmitir confiança</h3>
+<p>Uma presença profissional ajuda o cliente a perceber que o teu negócio é sério.</p>
+</div>
+
+<div class="problem-card reveal">
+<div class="problem-icon">📱</div>
+<h3>Funciona no telemóvel</h3>
+<p>O teu site pode ser visto no smartphone, tablet ou computador.</p>
+</div>
+</div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+<div class="section-header reveal">
+<div class="section-label">O QUE FAZEMOS</div>
+<h2 class="section-title">Criamos o site certo para o teu negócio.</h2>
+<p class="section-description">Desde uma página simples até uma loja online completa.</p>
+</div>
+
+<div class="services-grid">
+<div class="service-card reveal">
+<div class="service-icon">💼</div>
+<h3>Sites Empresariais</h3>
+<p>Apresenta a tua empresa, serviços, localização, contactos e informações.</p>
+</div>
+
+<div class="service-card reveal">
+<div class="service-icon">🛒</div>
+<h3>Lojas Online</h3>
+<p>Mostra produtos, preços, categorias e facilita os pedidos dos clientes.</p>
+</div>
+
+<div class="service-card reveal">
+<div class="service-icon">💈</div>
+<h3>Barbearias & Salões</h3>
+<p>Serviços, preços, horários, localização e contacto para marcações.</p>
+</div>
+
+<div class="service-card reveal">
+<div class="service-icon">🍔</div>
+<h3>Restaurantes</h3>
+<p>Menu, pratos, preços, localização e pedidos através do WhatsApp.</p>
+</div>
+
+<div class="service-card reveal">
+<div class="service-icon">🏨</div>
+<h3>Hotéis</h3>
+<p>Quartos, fotografias, serviços, localização e contactos.</p>
+</div>
+
+<div class="service-card reveal">
+<div class="service-icon">📲</div>
+<h3>Integração WhatsApp</h3>
+<p>Botões estratégicos para o cliente entrar em contacto rapidamente.</p>
+</div>
+</div>
+</section>
+
+<!-- PROJETOS -->
+<section class="portfolio" id="projetos">
+<div class="section-header reveal">
+<div class="section-label">PROJETOS</div>
+<h2 class="section-title">Escolhe o tipo de site que precisas.</h2>
+<p class="section-description">Clica em qualquer projeto para ver o que podemos criar para esse tipo de negócio e consultar o preço.</p>
+</div>
+
+<div class="portfolio-grid">
+
+<div class="project-card reveal" onclick="abrirProjeto('hamburgaria')" role="button" tabindex="0" onkeypress="if(event.key==='Enter')abrirProjeto('hamburgaria')">
+<div class="project-bg" style="background-image:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=80')"></div>
+<div class="project-overlay"></div>
+<div class="project-info">
+<small>🍔 RESTAURAÇÃO</small>
+<h3>Hambúrgueria</h3>
+<p>Menu, fotos e pedidos</p>
+<span class="project-click">Clica para ver →</span>
+</div>
+</div>
+
+<div class="project-card reveal" onclick="abrirProjeto('pizza')" role="button" tabindex="0" onkeypress="if(event.key==='Enter')abrirProjeto('pizza')">
+<div class="project-bg" style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40824ae38?auto=format&fit=crop&w=1000&q=80')"></div>
+<div class="project-overlay"></div>
+<div class="project-info">
+<small>🍕 RESTAURAÇÃO</small>
+<h3>Pizzaria</h3>
+<p>Cardápio online e entrega</p>
+<span class="project-click">Clica para ver →</span>
+</div>
+</div>
+
+<div class="project-card reveal" onclick="abrirProjeto('barbearia')" role="button" tabindex="0" onkeypress="if(event.key==='Enter')abrirProjeto('barbearia')">
+<div class="project-bg" style="background-image:url('https://images.unsplash.com/photo-1585747860715-cd4628902046?auto=format&fit=crop&w=1000&q=80')"></div>
+<div class="project-overlay"></div>
+<div class="project-info">
+<small>💈 SALÕES</small>
+<h3>Barbearia</h3>
+<p>Serviços e marcações</p>
+<span class="project-click">Clica para ver →</span>
+</div>
+</div>
+
+<div class="project-card reveal" onclick="abrirProjeto('salao')" role="button" tabindex="0" onkeypress="if(event.key==='Enter')abrirProjeto('salao')">
+<div class="project-bg" style="background-image:url('https://images.unsplash.com/photo-1562807503-461bfaf1620a?auto=format&fit=crop&w=1000&q=80')"></div>
+<div class="project-overlay"></div>
+<div class="project-info">
+<small>💅 SALÕES</small>
+<h3>Salão de Beleza</h3>
+<p>Serviços e agendamentos</p>
+<span class="project-click">Clica para ver →</span>
+</div>
+</div>
+
+<div class="project-card reveal" onclick="abrirProjeto('hotel')" role="button" tabindex="0" onkeypress="if(event.key==='Enter')abrirProjeto('hotel')">
+<div class="project-bg" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80')"></div>
+<div class="project-overlay"></div>
+<div class="project-info">
+<small>🏨 HOTELARIA</small>
+<h3>Hotel</h3>
+<p>Quartos e reservas</p>
+<span class="project-click">Clica para ver →</span>
+</div>
+</div>
+
+<div class="project-card reveal" onclick="abrirProjeto('loja')" role="button" tabindex="0" onkeypress="if(event.key==='Enter')abrirProjeto('loja')">
+<div class="project-bg" style="background-image:url('https://images.unsplash.com/photo-1556742209-6c8586ecb6ce?auto=format&fit=crop&w=1000&q=80')"></div>
+<div class="project-overlay"></div>
+<div class="project-info">
+<small>🛍️ COMÉRCIO</small>
+<h3>Loja Online</h3>
+<p>Produtos e checkout</p>
+<span class="project-click">Clica para ver →</span>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- PROCESSO -->
+<section id="processo">
+<div class="section-header reveal">
+<div class="section-label">COMO FUNCIONA</div>
+<h2 class="section-title">O nosso processo é simples.</h2>
+<p class="section-description">Da ideia ao site pronto e publicado.</p>
+</div>
+
+<div class="process-grid">
+<div class="process-card reveal">
+<div class="process-number">01</div>
+<h3>Reunião</h3>
+<p>Conversamos sobre o teu negócio, objetivos e visão para o site.</p>
+</div>
+
+<div class="process-card reveal">
+<div class="process-number">02</div>
+<h3>Design</h3>
+<p>Criamos o design do site adaptado à tua marca e necessidades.</p>
+</div>
+
+<div class="process-card reveal">
+<div class="process-number">03</div>
+<h3>Desenvolvimento</h3>
+<p>Construímos o site com tecnologia moderna e responsiva.</p>
+</div>
+
+<div class="process-card reveal">
+<div class="process-number">04</div>
+<h3>Lançamento</h3>
+<p>Publicamos o teu site e asseguramos que tudo funciona perfeitamente.</p>
+</div>
+</div>
+</section>
+
+<!-- PREÇOS -->
+<section class="pricing" id="precos">
+<div class="section-header reveal">
+<div class="section-label">PLANOS</div>
+<h2 class="section-title">Preços simples e competitivos.</h2>
+<p class="section-description">Escolhe o plano que melhor se adequa ao teu negócio.</p>
+</div>
+
+<div class="pricing-grid">
+
+<div class="price-card reveal">
+<h3>Startup</h3>
+<p style="color:#999; font-size:14px; margin-bottom:20px;">Perfeito para começar</p>
+<div class="price">50.000 <span>AOA</span></div>
+<ul class="price-list">
+<li>Até 5 páginas</li>
+<li>Design profissional</li>
+<li>Responsivo</li>
+<li>Contacto e mapa</li>
+<li>WhatsApp integrado</li>
+</ul>
+<button class="btn btn-outline" onclick="abrirContacto()">Saber mais</button>
+</div>
+
+<div class="price-card featured reveal">
+<div class="popular">POPULAR</div>
+<h3>Profissional</h3>
+<p style="color:#999; font-size:14px; margin-bottom:20px;">Mais completo</p>
+<div class="price">100.000 <span>AOA</span></div>
+<ul class="price-list">
+<li>Até 15 páginas</li>
+<li>Design premium</li>
+<li>Responsivo</li>
+<li>Blog integrado</li>
+<li>WhatsApp e formulários</li>
+<li>SEO básico</li>
+</ul>
+<button class="btn btn-primary" onclick="abrirContacto()">Começar agora</button>
+</div>
+
+<div class="price-card reveal">
+<h3>E-Commerce</h3>
+<p style="color:#999; font-size:14px; margin-bottom:20px;">Para lojas online</p>
+<div class="price">150.000 <span>AOA</span></div>
+<ul class="price-list">
+<li>Loja completa</li>
+<li>Gestão de produtos</li>
+<li>Carrinho de compras</li>
+<li>Pagamentos online</li>
+<li>WhatsApp integrado</li>
+<li>Suporte 6 meses</li>
+</ul>
+<button class="btn btn-outline" onclick="abrirContacto()">Saber mais</button>
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contacto">
+<div class="cta-box">
+<h2>Pronto para levar o teu negócio online?</h2>
+<p>Entra em contacto connosco e vamos criar o site perfeito para ti.</p>
+
+<div class="hero-buttons" style="justify-content:center;">
+<a href="https://wa.me/244923000000?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20de%20criação%20de%20sites%20da%20BRUNEX%20WEB" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Contactar via WhatsApp</a>
+<a href="mailto:info@brunexweb.com" class="btn btn-outline">Enviar email</a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-content">
+<p class="footer-copy">&copy; 2024 BRUNEX WEB. Todos os direitos reservados.</p>
+
+<ul class="footer-links">
+<li><a href="#inicio">Início</a></li>
+<li><a href="#servicos">Serviços</a></li>
+<li><a href="#projetos">Projetos</a></li>
+<li><a href="#precos">Preços</a></li>
+<li><a href="https://wa.me/244923000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+</ul>
+</div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="projectModal">
+<div class="modal-content">
+<button class="modal-close" onclick="fecharModal()">✕</button>
+
+<div class="modal-icon" id="modalIcon"></div>
+<div class="modal-category" id="modalCategory"></div>
+<h2 class="modal-title" id="modalTitle"></h2>
+<p class="modal-headline" id="modalHeadline"></p>
+<p class="modal-description" id="modalDescription"></p>
+
+<h4 style="margin:25px 0 15px 0; color:#ddd;">Funcionalidades incluídas:</h4>
+<ul class="modal-features" id="modalFeatures"></ul>
+
+<div class="modal-price-box">
+<div class="modal-price-label">Preço a partir de</div>
+<div class="modal-price" id="modalPrice"></div>
+</div>
+
+<div class="modal-actions">
+<a href="" class="btn btn-primary" id="modalCTA" target="_blank" rel="noopener noreferrer">Contactar via WhatsApp</a>
+<button class="btn btn-outline" onclick="fecharModal()">Fechar</button>
+</div>
+</div>
+</div>
+
+<script>
+// PROJETOS - Dados
+const projetos = {
+    hamburgaria: {
+        icon: '🍔',
+        category: 'RESTAURAÇÃO',
+        title: 'Hambúrgueria',
+        headline: 'Site completo com menu, fotos apetitosas e sistema de pedidos via WhatsApp.',
+        description: 'Perfeito para hambuguerias e fast-food. Mostra os teus burgers em alta qualidade, descreve ingredientes, pratos especiais e facilita pedidos diretos através do WhatsApp.',
+        features: [
+            'Menu digital com fotos',
+            'Descrições de pratos',
+            'Promoções e descontos',
+            'Localização no mapa',
+            'Pedidos via WhatsApp',
+            'Horário de funcionamento'
+        ],
+        price: '75.000 AOA',
+        whatsapp: 'https://wa.me/244923000000?text=Gostaria%20de%20um%20site%20para%20a%20minha%20hamburgueria'
+    },
+    pizza: {
+        icon: '🍕',
+        category: 'RESTAURAÇÃO',
+        title: 'Pizzaria',
+        headline: 'Cardápio online completo com sistema de encomendas integrado.',
+        description: 'Ideal para pizzarias. Exibe o cardápio com fotos, tamanhos, preços, promoções e permite que os clientes façam encomendas diretamente através do WhatsApp ou formulário.',
+        features: [
+            'Cardápio digital',
+            'Tamanhos e preços',
+            'Personalizações',
+            'Promoções em destaque',
+            'Entrega ao domicílio',
+            'Acompanhamento de pedidos'
+        ],
+        price: '75.000 AOA',
+        whatsapp: 'https://wa.me/244923000000?text=Gostaria%20de%20um%20site%20para%20a%20minha%20pizzaria'
+    },
+    barbearia: {
+        icon: '💈',
+        category: 'SALÕES',
+        title: 'Barbearia',
+        headline: 'Showcasse de serviços, preços e sistema de agendamento online.',
+        description: 'Apresenta os teus serviços de barba e cabelo com qualidade. Mostra o portfólio, preços, barbeiros disponíveis e oferece agendamento direto via WhatsApp.',
+        features: [
+            'Galeria de cortes',
+            'Lista de serviços',
+            'Preços transparentes',
+            'Equipa e especialidades',
+            'Agendamento WhatsApp',
+            'Endereço e horários'
+        ],
+        price: '75.000 AOA',
+        whatsapp: 'https://wa.me/244923000000?text=Gostaria%20de%20um%20site%20para%20a%20minha%20barbearia'
+    },
+    salao: {
+        icon: '💅',
+        category: 'SALÕES',
+        title: 'Salão de Beleza',
+        headline: 'Showcase completo com serviços, tratamentos e sistema de marcações.',
+        description: 'Para salões de beleza, cabeleireiros e spas. Apresenta serviços, tratamentos especiais, produtos, profissionais e facilita agendamentos através do WhatsApp.',
+        features: [
+            'Serviços de beleza',
+            'Tratamentos faciais',
+            'Cuidados de cabelo',
+            'Produtos utilizados',
+            'Profissionais da equipa',
+            'Agendamento online'
+        ],
+        price: '75.000 AOA',
+        whatsapp: 'https://wa.me/244923000000?text=Gostaria%20de%20um%20site%20para%20o%20meu%20salao'
+    },
+    hotel: {
+        icon: '🏨',
+        category: 'HOTELARIA',
+        title: 'Hotel',
+        headline: 'Catálogo de quartos, serviços hoteleiros e sistema de reservas.',
+        description: 'Para hotéis e hospedagens. Apresenta quartos com fotos, descrições, preços, serviços oferecidos, localização e permite reservas diretas.',
+        features: [
+            'Galeria de quartos',
+            'Tipos de acomodação',
+            'Preços e tarifas',
+            'Serviços hoteleiros',
+            'Localização e mapa',
+            'Formulário de reservas'
+        ],
+        price: '100.000 AOA',
+        whatsapp: 'https://wa.me/244923000000?text=Gostaria%20de%20um%20site%20para%20o%20meu%20hotel'
+    },
+    loja: {
+        icon: '🛍️',
+        category: 'COMÉRCIO',
+        title: 'Loja Online',
+        headline: 'E-commerce completo com catálogo, carrinho e pagamento.',
+        description: 'Loja online completa para vender produtos. Inclui catálogo digital, carrinho de compras, múltiplas formas de pagamento e integração com WhatsApp para suporte.',
+        features: [
+            'Catálogo de produtos',
+            'Carrinho de compras',
+            'Pagamentos online',
+            'Gestão de inventário',
+            'Relatórios de vendas',
+            'Suporte ao cliente'
+        ],
+        price: '150.000 AOA',
+        whatsapp: 'https://wa.me/244923000000?text=Gostaria%20de%20um%20site%20para%20a%20minha%20loja%20online'
+    }
+};
+
+// ABRIR MODAL
+function abrirProjeto(tipo) {
+    const projeto = projetos[tipo];
+    if (!projeto) return;
+
+    document.getElementById('modalIcon').textContent = projeto.icon;
+    document.getElementById('modalCategory').textContent = projeto.category;
+    document.getElementById('modalTitle').textContent = projeto.title;
+    document.getElementById('modalHeadline').textContent = projeto.headline;
+    document.getElementById('modalDescription').textContent = projeto.description;
+    document.getElementById('modalPrice').textContent = projeto.price;
+    document.getElementById('modalCTA').href = projeto.whatsapp;
+
+    const featuresHtml = projeto.features.map(f => `<li>${f}</li>`).join('');
+    document.getElementById('modalFeatures').innerHTML = featuresHtml;
+
+    document.getElementById('projectModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// FECHAR MODAL
+function fecharModal() {
+    document.getElementById('projectModal').classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// FECHAR MODAL ao clicar fora
+document.getElementById('projectModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        fecharModal();
+    }
+});
+
+// FECHAR MODAL com ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        fecharModal();
+    }
+});
+
+// MENU MOBILE
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', function() {
+    navLinks.classList.toggle('active');
+});
+
+// Fechar menu ao clicar num link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function() {
+        navLinks.classList.remove('active');
+    });
+});
+
+// SCROLL ANIMAÇÃO HEADER
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// REVEAL ANIMATION
+const revealElements = document.querySelectorAll('.reveal');
+
+const observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+revealElements.forEach(el => observer.observe(el));
+
+// CONTACTO
+function abrirContacto() {
+    window.open('https://wa.me/244923000000?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20de%20criação%20de%20sites%20da%20BRUNEX%20WEB', '_blank');
+}
+</script>
+
+</body>
+</html>
